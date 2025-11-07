@@ -1,0 +1,208 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+
+body.index {
+  background: #323030;
+  color: #222;
+}
+
+body.pagina2 {
+  background: #9c3a3a;
+  color: #000000;
+}
+
+body.pagina3 {
+  background: #000000;
+  color: #f1f1f1;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-bottom: 2px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+  color: #b30000;
+  border-bottom: 2px solid #b30000;
+  padding-bottom: 2px;
+}
+
+ 
+body.pagina3 .menu {
+  background: #111;
+  border-bottom: 1px solid #333;
+}
+body.pagina3 .menu a {
+  color: #f1f1f1;
+}
+body.pagina3 .menu a:hover,
+body.pagina3 .menu a.activo {
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+/* ======= TITULOS ======= */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #b30000;
+}
+
+body.pagina3 h1, 
+body.pagina3 h2 {
+  color: #ff4d4d;
+}
+
+/* ======= GRID GENERAL ======= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.bloque, .intro {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.bloque:hover {
+  transform: translateY(-5px);
+}
+
+/* Fondos adaptados */
+body.pagina2 .bloque,
+body.pagina2 .intro {
+  background: #fff;
+}
+
+body.pagina3 .bloque,
+body.pagina3 .intro {
+  background: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ======= TEXTO ======= */
+p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #b30000;
+  padding-left: 15px;
+  color: #555;
+  margin: 1em 0;
+}
+
+body.pagina3 blockquote {
+  border-left-color: #ff4d4d;
+  color: #ddd;
+}
+
+/* ======= IMÁGENES ======= */
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* ======= PIE DE PÁGINA ======= */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f8f8;
+}
+
+.descargar {
+  background: #b30000;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.descargar:hover {
+  background: #ff4d4d;
+}
+
+body.pagina3 footer {
+  background: #111;
+  border-top: 1px solid #333;
+}
+body.pagina3 .descargar {
+  background: #ff4d4d;
+  color: #000;
+}
+body.pagina3 .descargar:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 1024px) {
+  .grid {
+    padding: 40px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu ul {
+    gap: 20px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 25px 5%;
+  }
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .descargar {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
